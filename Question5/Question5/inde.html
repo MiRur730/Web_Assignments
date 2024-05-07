@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQuery</title>
+    
+</head>
+<body>
+    <style>
+  
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px;
+    width: calc(50% - 40px);
+}
+
+/* Media queries */
+
+/* Desktop devices (min-width: 1200px) */
+@media (min-width: 1200px) {
+    #desktop {
+        display: block;
+    }
+    #tablet, #mobile, #landscape, #portrait {
+        display: none;
+    }
+}
+
+/* Tablet devices (min-width: 768px and max-width: 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    #tablet {
+        display: block;
+    }
+    #desktop, #mobile, #landscape, #portrait {
+        display: none;
+    }
+}
+
+/* Mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+    #mobile {
+        display: block;
+    }
+    #desktop, #tablet, #landscape, #portrait {
+        display: none;
+    }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+    #landscape {
+        display: block;
+    }
+    #portrait {
+        display: none;
+    }
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+    #portrait {
+        display: block;
+    }
+    #landscape {
+        display: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        font-size: 14px;
+    }
+    header {
+        display: none;
+    }
+}
+
+/* Monochrome display */
+@media (monochrome) {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+/* Hover capability */
+@media (hover) {
+    section:hover {
+        background-color: #ccc;
+    }
+}
+    </style>
+    <header>
+        <h1>Media Query Examples</h1>
+    </header>
+    <main>
+        <section id="desktop">
+            <h2>Desktop</h2>
+            <p>Only visible odesktop devices.</p>
+        </section>
+        <section id="tablet">
+            <h2>Tablet Content</h2>
+            <p>Only visible on tablet devices.</p>
+        </section>
+        <section id="mobile">
+            <h2>Mobile </h2>
+            <p>Only visible on mobile devices.</p>
+        </section>
+        <section id="landscape">
+            <h2>Landscape Content</h2>
+            <p>This content is only visible when the device is in landscape orientation.</p>
+        </section>
+        <section id="portrait">
+            <h2>Portrait Content</h2>
+            <p>This content is only visible when the device is in portrait orientation.</p>
+        </section>
+    </main>
+</body>
+</html>
